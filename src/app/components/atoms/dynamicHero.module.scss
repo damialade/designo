@@ -1,0 +1,62 @@
+@import "../../styles/variables";
+
+.dynamicSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  color: $primary-white;
+  max-width: 90vw;
+  margin: auto;
+  border-radius: 10px;
+  height: 40vh;
+  text-align: center;
+
+  .dynamicContent {
+    max-width: 600px;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    height: 30vh;
+
+    .dynamic-content {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: 40vh;
+    max-width: 100vw;
+    border-radius: 0%;
+
+    .dynamic-content {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

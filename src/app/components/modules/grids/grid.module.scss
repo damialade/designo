@@ -1,0 +1,99 @@
+@import "../../../styles/variables";
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 60vh;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.gridItem {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    max-width: 90vw;
+    margin: auto;
+    height: 20vh;
+  }
+
+  .gridImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.grid1 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  max-width: 100%;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    max-width: 90vw;
+    margin: auto;
+    height: 20vh;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  height: 100%;
+  opacity: 1;
+
+  @media (hover: hover) {
+    .gridItem:hover & {
+      background-color: rgba(231, 129, 107, 0.5);
+    }
+  }
+}
+
+.link {
+  color: $primary-peach;
+  text-decoration: none;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-left: 5px;
+  }
+}

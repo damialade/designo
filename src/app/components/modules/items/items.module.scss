@@ -1,0 +1,79 @@
+@import "../../../styles/variables";
+
+.itemsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  max-width: 90vw;
+  margin: auto;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.item {
+  padding: 20px;
+
+  .itemContent {
+    margin-top: 50px;
+    text-align: center;
+    @media (max-width: 1024px) {
+      margin-left: 20px;
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  .itemTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: $primary-dark;
+    font-weight: 500;
+    @media (max-width: 1024px) {
+      font-weight: 400;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .itemDescription {
+    font-size: 1rem;
+    color: $secondary-dark;
+  }
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+.imageWrapper {
+  width: 50%;
+  height: 30%;
+  max-width: 100vw;
+  margin: auto;
+  flex: 0 0 100%;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    flex: 0 0 30%;
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+
+  .itemImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
