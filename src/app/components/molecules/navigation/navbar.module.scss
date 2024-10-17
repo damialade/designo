@@ -1,0 +1,120 @@
+@import "../../../styles/variables";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: $secondary-dark;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  text-transform: uppercase;
+  max-width: 90vw;
+  margin: auto;
+
+  @media (max-width: 768px) {
+    position: sticky; /* Changed to sticky for better behavior */
+    top: 0;
+    max-width: 100vw;
+    background-color: $primary-white;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    h2 {
+      margin-left: 10px;
+    }
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 30px;
+
+    a {
+      color: $secondary-dark;
+      text-decoration: none;
+      font-size: 18px;
+      &:hover {
+        color: $primary-peach;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      gap: 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      position: fixed;
+      top: calc(72px + 5px); /* 5px below the logo */
+      right: 0;
+      background-color: $primary-dark;
+      flex-direction: column;
+      width: 100%;
+      padding: 10px 0;
+      transition: transform 0.5s ease-in-out;
+      transform: translateY(-100%); /* Menu is hidden initially */
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+
+      a {
+        color: $primary-white;
+        padding: 10px 50px;
+        text-align: left;
+      }
+
+      a:hover {
+        color: $primary-peach;
+      }
+    }
+
+    &.open {
+      transform: translateY(4%);
+      opacity: 1;
+      visibility: visible; /* Make the menu visible */
+    }
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+
+    @media (max-width: 768px) {
+      display: flex;
+      z-index: 1001; /* Ensure the hamburger is above the overlay */
+    }
+
+    .menuIcon {
+      width: 30px;
+      height: 30px;
+      color: $primary-dark;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+/* Overlay to be resolved*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 2, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
