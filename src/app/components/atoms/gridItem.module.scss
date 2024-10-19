@@ -2,12 +2,12 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns on desktop */
-  grid-template-rows: repeat(1, 1fr); /* One row by default */
-  gap: 20px; /* Space between items */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
-  height: 60vh; /* Optional height for desktop view */
+  height: 60vh;
   max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
@@ -16,8 +16,8 @@
 
   @media (max-width: 1024px) {
     display: flex;
-    flex-direction: column; /* Stack items on mobile */
-    height: auto; /* Allow height to auto adjust */
+    flex-direction: column;
+    height: auto;
   }
 }
 
@@ -70,24 +70,19 @@
 
   @media (hover: hover) {
     .gridItem:hover & {
-      background-color: rgba(
-        231,
-        129,
-        107,
-        0.5
-      ); /* Change overlay color on hover */
+      background-color: rgba(231, 129, 107, 0.5);
     }
   }
 }
 
 .link {
-  color: $primary-peach; /* Link color */
+  color: $primary-peach;
   text-decoration: none;
   margin-top: 10px;
   display: flex;
   align-items: center;
 
   svg {
-    margin-left: 5px; /* Space between text and icon */
+    margin-left: 5px;
   }
 }
