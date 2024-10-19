@@ -9,9 +9,9 @@ const RealDealHero = () => {
   useEffect(() => {
     const updateScreenSize = () => {
       const width = window.innerWidth;
-      if (width >= 1024) {
+      if (width >= 1025) {
         setScreenSize("desktop");
-      } else if (width >= 768 && width < 1024) {
+      } else if (width >= 768 && width < 1025) {
         setScreenSize("tablet");
       } else {
         setScreenSize("mobile");
