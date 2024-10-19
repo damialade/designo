@@ -1,0 +1,76 @@
+@import "../../styles/variables";
+
+.locationSection {
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  margin-bottom: 100px;
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .locationCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .locationImage {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .locationContent {
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: $secondary-dark;
+        @media (max-width: 1024px) {
+          font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+          font-size: 1.2rem;
+        }
+      }
+
+      .exploreButton {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        background-color: $primary-peach;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $secondary-peach;
+        }
+      }
+    }
+  }
+}

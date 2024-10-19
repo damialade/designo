@@ -10,7 +10,7 @@ export const metadata = {
   title: "Graphic Designs | Designo",
 };
 
-const AppPage = () => {
+const GraphicPage = () => {
   return (
     <Fragment>
       <Navbar />
@@ -23,4 +23,4 @@ const AppPage = () => {
   );
 };
 
-export default AppPage;
+export default GraphicPage;

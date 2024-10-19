@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./getintouch.module.scss";
+import Link from "next/link";
 
 const GetInTouch = () => {
   return (
@@ -10,7 +11,9 @@ const GetInTouch = () => {
           Ready to take it to the next level? Contact us today and find out how
           our expertise can help your business grow.
         </p>
-        <button>Get in Touch</button>
+        <Link href="/contact">
+          <button>Get in Touch</button>
+        </Link>
       </div>
     </section>
   );
