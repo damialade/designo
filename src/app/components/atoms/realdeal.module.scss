@@ -45,7 +45,7 @@
     align-content: center;
 
     @media (max-width: 1024px) {
-      order: 2; /* Display after image on mobile/tablet */
+      order: 2;
       padding: 10px;
       text-align: center;
     }
