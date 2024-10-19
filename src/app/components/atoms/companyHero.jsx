@@ -45,7 +45,7 @@ const CompanyHero = () => {
   const imageDimensions = {
     desktop: { width: 517, height: 512 },
     tablet: { width: 687, height: 320 },
-    mobile: { width: 375, height: 320 },
+    mobile: { width: 450, height: 320 },
   };
 
   // Get current dimensions based on screen size

@@ -6,9 +6,12 @@ import styles from "./locationMaps.module.scss";
 // Location data for different devices
 const locations = [
   {
-    title: "Canada",
-    address: "123 Maple St, Toronto, Ontario",
-    contact: "Phone: +1 123 456 7890",
+    country: "Canada",
+    title: "Designo Central Office",
+    address: "3886 Wellington Street",
+    postcode: "Toronto, Ontario M9C 3J5",
+    contact: "P: +1 253-863-8967",
+    email: "M: contact@designo.co.ca",
     mapDesktop: "/images/canadadesktop.png",
     mapTablet: "/images/canadatablet.png",
     mapMobile: "/images/canadamobile.png",
@@ -16,9 +19,12 @@ const locations = [
     bgMobile: "/images/locationbgmobile.png",
   },
   {
-    title: "Australia",
-    address: "456 Sydney St, Sydney, NSW",
-    contact: "Phone: +61 987 654 321",
+    country: "Australia",
+    title: "Designo AU Office",
+    address: "19 Balonne Street",
+    postcode: "New South Wales 2443",
+    contact: "P: (02) 6720 9092",
+    email: "M: contact@designo.co.au",
     mapDesktop: "/images/ausdesktop.png",
     mapTablet: "/images/austablet.png",
     mapMobile: "/images/ausmobile.png",
@@ -26,9 +32,12 @@ const locations = [
     bgMobile: "/images/locationbgmobile.png",
   },
   {
-    title: "London",
-    address: "789 London Rd, London, UK",
-    contact: "Phone: +44 1234 567890",
+    country: "United Kingdom",
+    title: "Designo UK Office",
+    address: "13 Colorado Way",
+    postcode: "Central London SA8 9GA",
+    contact: "P: 078 3115 1400",
+    email: "M: contact@designo.co.uk",
     mapDesktop: "/images/londondesktop.png",
     mapTablet: "/images/londontablet.png",
     mapMobile: "/images/londonmobile.png",
@@ -102,10 +111,18 @@ const LocationMaps = () => {
                 backgroundImage: `url(${backgroundImage})`,
               }}
             >
-              <h2>{location.title}</h2>
-              <div className={styles.infoWrapper}>
-                <div>{location.address}</div>
-                <div>{location.contact}</div>
+              <h2>{location.country}</h2>
+              <div className={styles.infoContainer}>
+                <div className={styles.infoWrapper}>
+                  <h5 className={styles.title}>{location.title}</h5>
+                  <div>{location.address}</div>
+                  <div>{location.postcode}</div>
+                </div>
+                <div className={styles.infoWrapper}>
+                  <h5 className={styles.title}>Contact</h5>
+                  <div>{location.contact}</div>
+                  <div>{location.email}</div>
+                </div>
               </div>
             </div>
           </div>

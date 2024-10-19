@@ -45,7 +45,7 @@ const RealDealHero = () => {
   const imageDimensions = {
     desktop: { width: 512, height: 689 },
     tablet: { width: 689, height: 320 },
-    mobile: { width: 375, height: 320 },
+    mobile: { width: 450, height: 320 },
   };
 
   // Get current dimensions based on screen size
