@@ -41,11 +41,15 @@
         text-decoration: underline;
         cursor: pointer;
       }
-    }
 
-    @media (max-width: 1024px) {
-      gap: 15px;
-      font-size: 14px;
+      @media (max-width: 1024px) {
+        gap: 5px;
+        font-size: 14px;
+      }
+      @media (max-width: 640px) {
+        gap: 5px;
+        font-size: 18px;
+      }
     }
 
     @media (max-width: 768px) {

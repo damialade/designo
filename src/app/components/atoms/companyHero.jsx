@@ -9,9 +9,9 @@ const CompanyHero = () => {
   useEffect(() => {
     const updateScreenSize = () => {
       const width = window.innerWidth;
-      if (width >= 1024) {
+      if (width >= 1025) {
         setScreenSize("desktop");
-      } else if (width >= 768 && width < 1024) {
+      } else if (width >= 768 && width < 1025) {
         setScreenSize("tablet");
       } else {
         setScreenSize("mobile");
@@ -72,7 +72,6 @@ const CompanyHero = () => {
           <Image
             src={sideImage}
             alt="Hero Side"
-            className={styles.img}
             width={width}
             height={height}
             priority
