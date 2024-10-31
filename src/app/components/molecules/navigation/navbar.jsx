@@ -1,12 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from "./navbar.module.scss";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "Our Company",
+    path: "/company",
+  },
+  {
+    label: "Locations",
+    path: "/locations",
+  },
+  {
+    label: "Contact",
+    path: "/contact",
+  },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -14,6 +34,19 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  const pathname = usePathname();
+
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth <= 640);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   return (
     <>
@@ -31,18 +64,30 @@ const Navbar = () => {
           </Link>
         </div>
         <nav className={`${styles.navLinks} ${isOpen ? styles.open : ""}`}>
-          <Link href="/" onClick={closeMenu}>
-            Home
-          </Link>
-          <Link href="/company" onClick={closeMenu}>
-            Our Company
-          </Link>
-          <Link href="/locations" onClick={closeMenu}>
-            Locations
-          </Link>
-          <Link href="/contact" onClick={closeMenu}>
-            Contact
-          </Link>
+          <ul>
+            {links.map((link) => {
+              const isActive = pathname === link.path;
+              const color = isActive
+                ? "#e7816b"
+                : isMobile
+                ? "#fafafa"
+                : "#333136";
+              return (
+                <li key={`${link.label}-${link.path}`}>
+                  <Link
+                    style={{
+                      fontWeight: isActive ? "bold" : "normal",
+                      color: color,
+                    }}
+                    href={link.path}
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
         <div className={styles.hamburger} onClick={toggleMenu}>
           <svg
