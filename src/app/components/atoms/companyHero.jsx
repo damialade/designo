@@ -8,7 +8,7 @@ const CompanyHero = () => {
 
   useEffect(() => {
     const updateScreenSize = () => {
-      const width = window.innerWidth;
+      const width = window?.innerWidth;
       if (width >= 1025) {
         setScreenSize("desktop");
       } else if (width >= 768 && width < 1025) {
@@ -19,10 +19,10 @@ const CompanyHero = () => {
     };
 
     updateScreenSize();
-    window.addEventListener("resize", updateScreenSize);
+    window?.addEventListener("resize", updateScreenSize);
 
     return () => {
-      window.removeEventListener("resize", updateScreenSize);
+      window?.removeEventListener("resize", updateScreenSize);
     };
   }, []);
 
@@ -64,8 +64,8 @@ const CompanyHero = () => {
             results for our clients. We&apos;ve partnered with many startups,
             corporations, and nonprofits alike to craft designs that make real
             impact. We&apos;re always looking forward to creating brands,
-            products, and digital experiences that connect with our clients'
-            audiences.
+            products, and digital experiences that connect with our
+            clients&apos; audiences.
           </p>
         </div>
         <div className={styles.imageContent}>

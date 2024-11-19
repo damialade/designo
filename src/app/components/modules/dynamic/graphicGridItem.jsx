@@ -1,5 +1,5 @@
 import React from "react";
-import GridContainer from "../../atoms/GridItem";
+import GridContainer from "../../atoms/gridItem";
 
 const GraphicGridItem = () => {
   const items = [

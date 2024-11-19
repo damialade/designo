@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Navbar from "../components/molecules/navigation/Navbar";
+import Navbar from "../components/molecules/navigation/navbar";
 import Footer from "../components/molecules/footer/footer";
 import GetInTouch from "../components/modules/getintouch/getintouch";
 import LocationMaps from "../components/modules/map/locationMaps";
