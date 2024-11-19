@@ -51,7 +51,7 @@ const LocationMaps = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
+      const width = window?.innerWidth;
       if (width >= 1024) {
         setScreenSize("desktop");
       } else if (width >= 768) {
@@ -65,9 +65,9 @@ const LocationMaps = () => {
     handleResize();
 
     // addeventlistener for window resizing
-    window.addEventListener("resize", handleResize);
+    window?.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window?.removeEventListener("resize", handleResize);
   }, []);
 
   return (

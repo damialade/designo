@@ -8,7 +8,7 @@ const RealDealHero = () => {
 
   useEffect(() => {
     const updateScreenSize = () => {
-      const width = window.innerWidth;
+      const width = window?.innerWidth;
       if (width >= 1025) {
         setScreenSize("desktop");
       } else if (width >= 768 && width < 1025) {
@@ -19,10 +19,10 @@ const RealDealHero = () => {
     };
 
     updateScreenSize();
-    window.addEventListener("resize", updateScreenSize);
+    window?.addEventListener("resize", updateScreenSize);
 
     return () => {
-      window.removeEventListener("resize", updateScreenSize);
+      window?.removeEventListener("resize", updateScreenSize);
     };
   }, []);
 

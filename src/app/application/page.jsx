@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Navbar from "../components/molecules/navigation/Navbar";
+import Navbar from "../components/molecules/navigation/navbar";
 import Footer from "../components/molecules/footer/footer";
 import AppHero from "../components/modules/dynamic/appHero";
 import AppGrid from "../components/modules/dynamic/appGrid";

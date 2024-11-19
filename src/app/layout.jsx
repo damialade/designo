@@ -30,12 +30,6 @@ const RootLayout = ({ children }) => {
         />
 
         <meta name="theme-color" content="#ffffff" />
-
-        {/* Link to Google Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body className="antialiased" style={{ fontFamily: "Jost, sans-serif" }}>
         {children}
