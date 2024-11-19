@@ -217,4 +217,4 @@ const ArrowRight = (props) => (
     </defs>
   </svg>
 );
-export default ArrowRight;
+export { ArrowRight };

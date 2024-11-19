@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./grid.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import ArrowRight from "../../icons/ArrowRight";
+import { ArrowRight } from "../../icons/ArrowRight";
 
 const GridComponent = () => {
   const grids = [
@@ -54,4 +54,4 @@ const GridComponent = () => {
   );
 };
 
-export default GridComponent;
+export { GridComponent };

@@ -8,21 +8,28 @@ const RealDealHero = () => {
 
   useEffect(() => {
     const updateScreenSize = () => {
-      const width = window?.innerWidth;
-      if (width >= 1025) {
-        setScreenSize("desktop");
-      } else if (width >= 768 && width < 1025) {
-        setScreenSize("tablet");
-      } else {
-        setScreenSize("mobile");
+      if (typeof window !== "undefined") {
+        const width = window.innerWidth;
+        if (width >= 1025) {
+          setScreenSize("desktop");
+        } else if (width >= 768 && width < 1025) {
+          setScreenSize("tablet");
+        } else {
+          setScreenSize("mobile");
+        }
       }
     };
 
     updateScreenSize();
-    window?.addEventListener("resize", updateScreenSize);
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", updateScreenSize);
+    }
 
     return () => {
-      window?.removeEventListener("resize", updateScreenSize);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", updateScreenSize);
+      }
     };
   }, []);
 
@@ -86,4 +93,4 @@ const RealDealHero = () => {
   );
 };
 
-export default RealDealHero;
+export { RealDealHero };

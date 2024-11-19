@@ -51,4 +51,4 @@ const ItemsComponent = () => {
   );
 };
 
-export default ItemsComponent;
+export { ItemsComponent };
