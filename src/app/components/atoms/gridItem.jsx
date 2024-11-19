@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./gridItem.module.scss";
 import Link from "next/link";
-import ArrowRight from "../icons/ArrowRight";
+import { ArrowRight } from "../icons/ArrowRight";
 import Image from "next/image";
 
 const GridItem = ({ image, title, link }) => {
@@ -36,4 +36,4 @@ const GridContainer = ({ items }) => {
   );
 };
 
-export default GridContainer;
+export { GridContainer };

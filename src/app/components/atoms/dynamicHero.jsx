@@ -19,4 +19,4 @@ const DynamicHero = ({ backgroundImage, title, text }) => {
   );
 };
 
-export default DynamicHero;
+export { DynamicHero };

@@ -1,5 +1,5 @@
 import React from "react";
-import DynamicHero from "../../atoms/dynamicHero";
+import { DynamicHero } from "../../atoms/dynamicHero";
 
 const AppHero = () => {
   return (
@@ -11,4 +11,4 @@ const AppHero = () => {
   );
 };
 
-export default AppHero;
+export { AppHero };

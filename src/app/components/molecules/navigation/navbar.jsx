@@ -26,7 +26,7 @@ const links = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window?.innerWidth <= 640);
+  const [isMobile, setIsMobile] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -38,14 +38,21 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const handleResize = useCallback(() => {
-    setIsMobile(window?.innerWidth <= 640);
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 640);
+    }
   }, []);
 
   useEffect(() => {
-    window?.addEventListener("resize", handleResize);
-    return () => {
-      window?.removeEventListener("resize", handleResize);
-    };
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 640);
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, [handleResize]);
 
   return (
@@ -116,4 +123,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export { Navbar };

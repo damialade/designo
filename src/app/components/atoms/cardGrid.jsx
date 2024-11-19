@@ -30,4 +30,4 @@ const CardGrid = ({ cards }) => {
   );
 };
 
-export default CardGrid;
+export { CardGrid };

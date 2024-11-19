@@ -1,5 +1,5 @@
 import React from "react";
-import CardGrid from "../../atoms/cardGrid";
+import { CardGrid } from "../../atoms/cardGrid";
 
 const GraphicGrid = () => {
   const cards = [
@@ -23,4 +23,4 @@ const GraphicGrid = () => {
   return <CardGrid cards={cards} />;
 };
 
-export default GraphicGrid;
+export { GraphicGrid };

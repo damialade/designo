@@ -1,5 +1,5 @@
 import React from "react";
-import CardGrid from "../../atoms/cardGrid";
+import { CardGrid } from "../../atoms/cardGrid";
 
 const WebGrid = () => {
   const cards = [
@@ -38,4 +38,4 @@ const WebGrid = () => {
   return <CardGrid cards={cards} />;
 };
 
-export default WebGrid;
+export { WebGrid };

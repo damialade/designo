@@ -1,7 +1,7 @@
 import React from "react";
-import GridContainer from "../../atoms/gridItem";
+import { GridContainer } from "../../atoms/gridItem";
 
-const WebGridItem = () => {
+const AppGridItem = () => {
   const items = [
     {
       image: "/images/web.png",
@@ -22,4 +22,4 @@ const WebGridItem = () => {
   );
 };
 
-export default WebGridItem;
+export { AppGridItem };

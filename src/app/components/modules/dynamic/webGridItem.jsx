@@ -1,5 +1,5 @@
 import React from "react";
-import GridContainer from "../../atoms/gridItem";
+import { GridContainer } from "../../atoms/gridItem";
 
 const WebGridItem = () => {
   const items = [
@@ -22,4 +22,4 @@ const WebGridItem = () => {
   );
 };
 
-export default WebGridItem;
+export { WebGridItem };

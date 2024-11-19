@@ -50,24 +50,30 @@ const LocationMaps = () => {
   const [screenSize, setScreenSize] = useState("desktop");
 
   useEffect(() => {
-    const handleResize = () => {
-      const width = window?.innerWidth;
-      if (width >= 1024) {
-        setScreenSize("desktop");
-      } else if (width >= 768) {
-        setScreenSize("tablet");
-      } else {
-        setScreenSize("mobile");
+    const updateScreenSize = () => {
+      if (typeof window !== "undefined") {
+        const width = window.innerWidth;
+        if (width >= 1025) {
+          setScreenSize("desktop");
+        } else if (width >= 768 && width < 1025) {
+          setScreenSize("tablet");
+        } else {
+          setScreenSize("mobile");
+        }
       }
     };
 
-    // Check screen size on initial load
-    handleResize();
+    updateScreenSize();
 
-    // addeventlistener for window resizing
-    window?.addEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", updateScreenSize);
+    }
 
-    return () => window?.removeEventListener("resize", handleResize);
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", updateScreenSize);
+      }
+    };
   }, []);
 
   return (
@@ -132,4 +138,4 @@ const LocationMaps = () => {
   );
 };
 
-export default LocationMaps;
+export { LocationMaps };

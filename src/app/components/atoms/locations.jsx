@@ -49,4 +49,4 @@ const LocationsComponent = () => {
   );
 };
 
-export default LocationsComponent;
+export { LocationsComponent };

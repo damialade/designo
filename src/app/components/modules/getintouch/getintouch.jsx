@@ -19,4 +19,4 @@ const GetInTouch = () => {
   );
 };
 
-export default GetInTouch;
+export { GetInTouch };
